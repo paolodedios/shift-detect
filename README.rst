@@ -8,19 +8,19 @@ validation)
 
 The RULSIF method estimates the relative ratio of probability densities
 
-P(Numerator[x]) / (alpha * P(Numerator[x]) + (1 - alpha) * P(Denominator[x]))
+P(X_reference) / (alpha * P(X_reference) + (1 - alpha) * P(X_test))
 
 from samples:
 
-Denominator[x_i] | Denominator[x_i] in R^{d}, with i=1 to Denominator{N}
+X_test[i] | X_test[i] in R^{d}, with i=1 to X_test{N}
 
-drawn independently from P(Denominator[x])
+drawn independently from P(X_test)
 
 and samples
 
-Numerator[x_i] | Numerator[x_i] in R^{d}, with i=1 to Numerator{N}
+X_reference[i] | X_reference[i] in R^{d}, with i=1 to X_reference{N}
 
-drawn independently from P(Numerator[x])
+drawn independently from P(X_reference)
 
 Using relative density ratios allows the RULSIF method to calculate a divergence
 score between a reference and test sample
