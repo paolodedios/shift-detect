@@ -35,6 +35,7 @@ Usage
     >>> from change_detect import rulsif
     >>> estimator = RULSIF()
 
+    # Acquire training data
     >>> X_reference_train = numpy.array([[-327.538995628852,1060.88410310621,-5135.11159167599], \
                                          [-6079.76383170992,4540.07072474003, 4683.89186361784], \
                                          [-519.48584881375 ,-65.427245639234,-460.108594708504], \
@@ -45,9 +46,11 @@ Usage
                                          [2872.91368914527 ,-555.026187729457, 1582.54918268909], \
                                          [-715.46199368274 ,-544.196344693367, -61.437813172935]])
 
-    >>> estimator.train(X_reference_train, X_test_train)    # Train the model
+    # Train the model
+    >>> estimator.train(X_reference_train, X_test_train)
 
-    >>> for (X_reference, X_test) in real_dataset :         # Compare real data using the trained estimator
+    # Compare real data using the trained estimator
+    >>> for (X_reference, X_test) in real_dataset :
     >>>    divergence_score = estimator.apply(X_reference, X_test)
 
 
