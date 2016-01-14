@@ -28,7 +28,7 @@ score between a reference and test sample
 Usage
 =====
 
- $ python
+    $ python
     >>> import numpy
     >>> from change_detect import rulsif
     >>> estimator = RULSIF()
