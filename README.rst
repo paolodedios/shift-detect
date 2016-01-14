@@ -78,6 +78,6 @@ To run the all tests run
 References
 ==========
 
-[1] Relative Density-Ratio Estimation for Robust Distribution Comparison. Makoto Yamada,
-    Taiji Suzuki, Takafumi Kanamori, Hirotaka Hachiya, and Masashi Sugiyama. NIPS,
-    page 594-602. (2011)
+1. Relative Density-Ratio Estimation for Robust Distribution Comparison. Makoto Yamada,
+   Taiji Suzuki, Takafumi Kanamori, Hirotaka Hachiya, and Masashi Sugiyama. NIPS,
+   page 594-602. (2011)
