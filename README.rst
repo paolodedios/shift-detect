@@ -28,6 +28,8 @@ score between a reference and test sample
 Usage
 =====
 
+::
+
     $ python
     >>> import numpy
     >>> from change_detect import rulsif
@@ -59,7 +61,8 @@ Installation
 Development
 ===========
 
-To run the all tests run::
+To run the all tests run
+::
 
     $ pyb run_unit_tests / $ pyb run_integration_tests
 
