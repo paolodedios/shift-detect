@@ -49,6 +49,9 @@ def set_properties(project) :
     # Declare project runtime dependencies
     project.depends_on("six", ">=1.9")
     project.depends_on("docopt", ">=0.6.2")
+    project.depends_on("numpy", ">=1.10.4")
+    project.depends_on("scipy", ">=0.16.1")
+    project.depends_on("scikit-learn", ">=0.17.0")
 
     # Always upgrade runtime dependencies given the pinned version specs below
     project.set_property("install_dependencies_upgrade", True)
