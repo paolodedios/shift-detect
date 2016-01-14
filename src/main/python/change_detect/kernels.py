@@ -11,7 +11,6 @@ Kernel interfaces
 from __future__             import print_function
 
 import numpy     as numpy
-import scipy     as scipy
 
 
 class Estimator :

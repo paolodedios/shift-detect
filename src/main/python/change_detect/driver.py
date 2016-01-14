@@ -74,10 +74,10 @@ Options:
 """
 from __future__             import print_function
 from docopt                 import docopt
-from datetime               import datetime
 
 import sys
 import signal
+import json
 import change_detect
 
 
@@ -117,7 +117,7 @@ class Driver(object) :
         try :
             self._install_signal_handlers()
 
-            options = docopt(__doc__)
+            options = docopt(__doc__, version=change_detect.__version__)
 
             self._front_matter(options)
 
