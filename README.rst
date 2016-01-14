@@ -25,6 +25,30 @@ drawn independently from P(X_reference)
 Using relative density ratios allows the RULSIF method to calculate a divergence
 score between a reference and test sample
 
+Usage
+=====
+
+ $ python
+    >>> import numpy
+    >>> from change_detect import rulsif
+    >>> estimator = RULSIF()
+    # Train the model
+    >>> X_reference_train = numpy.array([[-327.538995628852,1060.88410310621,-5135.11159167599], \
+                                         [-6079.76383170992,4540.07072474003, 4683.89186361784], \
+                                         [-519.48584881375 ,-65.427245639234,-460.108594708504], \
+                                        [-102.050993806512,-486.055204138377,-373.829956812207]])
+
+    >>> X_test_train      = numpy.array([[4968.97172846034 ,3051.50683649008 ,-102.050993806512], \
+                                         [-5501.48250592865,-1951.72530129918,-44.1323008447163], \
+                                         [2872.91368914527 ,-555.026187729457, 1582.54918268909], \
+                                         [-715.46199368274 ,-544.196344693367, -61.437813172935]])
+
+    >>> estimator.train(X_reference_train, X_test_train)
+
+    # Compare real data using the trained estimator
+    >>> for (X_reference, X_test) in real_dataset :
+           divergence_score = estimator.apply(X_reference, X_test)
+
 
 Installation
 ============
