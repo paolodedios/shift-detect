@@ -18,6 +18,7 @@ this package should be instead executed with:
   $ python -m change_detect
 """
 from __future__ import print_function
+from driver import Driver
 
 import sys
 
@@ -29,10 +30,7 @@ def main(argv=()) :
     Returns:
         int: Program exit status code
     """
-
-    print(argv, file=sys.stdout)
-
-    return 0
+    return Driver().start()
 
 
 if __name__ == "__main__" :
