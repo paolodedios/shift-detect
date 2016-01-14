@@ -4,7 +4,7 @@ Covariate shift estimator
 
 Learns a covariate shift estimator for a given dataset via Relative
 Unconstrained Least-Squares Importance Fitting (with leave-one-out cross
-validation)
+validation)[1]
 
 The RULSIF method estimates the relative ratio of probability densities
 
@@ -24,6 +24,7 @@ drawn independently from P(X_reference)
 
 Using relative density ratios allows the RULSIF method to calculate a divergence
 score between a reference and test sample
+
 
 Usage
 =====
@@ -72,3 +73,11 @@ To run the all tests run
     or
 
     $ tox
+
+
+References
+==========
+
+[1] Relative Density-Ratio Estimation for Robust Distribution Comparison. Makoto Yamada,
+    Taiji Suzuki, Takafumi Kanamori, Hirotaka Hachiya, and Masashi Sugiyama. NIPS,
+    page 594-602. (2011)
