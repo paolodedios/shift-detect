@@ -36,13 +36,6 @@ Options:
   -k, --kernels K             use K number of kernels basis functions as an override
   -f, --folds F               use F number of cross validation folds, where leave one out CV is used if {f = 0}
 
-  -1, --scatter               render scatter plot of reference and test samples of dataset1 vs dataset2
-  -2, --scatterhistogram      render scatter + histogram plot of dataset1 vs dataset2
-  -3, --scatterkernel         render scatter plot of reference and test samples of dataset1 in Hilbert space
-
-  -4, --scatterratio          render scatter plot of reference and test samples of dataset1 vs density ratio
-  -5, --perfline              render line chart of compute performance for the specified datasets
-
   --dataset1 1                run detector on named data set field name from the specified collection; treated as R^d=1
   --dataset2 2                run detector on named data set field name from the specified collection; treated as R^d=2
   --dataset3 3                run detector on named data set field name from the specified collection; treated as R^d=3
