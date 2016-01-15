@@ -115,9 +115,9 @@ class AlphaRelativeDensityRatioEstimator(Estimator) :
         """
         Calculates the squared error criterion, J
         """
-        return (alpha / 2.0)       * (numpy.mean(g_Xref_theta  ** 2) )   +  \
-               ((1 - alpha) / 2.0) * (numpy.mean(g_Xtest_theta ** 2) )   -  \
-               numpy.mean(g_Xref_theta)
+        return ( (alpha / 2.0) * (numpy.mean(g_Xref_theta ** 2) ) +
+                 ((1 - alpha) / 2.0) * (numpy.mean(g_Xtest_theta ** 2) ) -
+                 numpy.mean(g_Xref_theta) )
 
     @staticmethod
     def g_of_X_theta(KernelMatrix_samples=None, theta_hat=None) :
@@ -173,10 +173,10 @@ class PearsonRelativeDivergenceEstimator(Estimator) :
 
         # Estimate alpha relative density ratio and pearson divergence score
         (r_alpha_Xref, r_alpha_Xtest) = densityRatioEstimator.apply(referenceSamples, testSamples, gaussianCenters)
-        PE_divergence                 = numpy.mean(r_alpha_Xref)                                                   - \
-                                        ( 0.5 * ( self.alphaConstraint * numpy.mean(r_alpha_Xref ** 2)        +
-                                                 (1.0 - self.alphaConstraint) * numpy.mean(r_alpha_Xtest ** 2) ) ) - \
-                                        0.5
+
+        PE_divergence = ( numpy.mean(r_alpha_Xref) -
+                          ( 0.5 * ( self.alphaConstraint * numpy.mean(r_alpha_Xref ** 2) +
+                            (1.0 - self.alphaConstraint) * numpy.mean(r_alpha_Xtest ** 2) ) ) - 0.5)
 
         return (PE_divergence, r_alpha_Xtest)
 

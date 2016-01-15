@@ -6,11 +6,10 @@
 # of this source code package.
 #
 """
-UNDER CONSTRUCTION
-Driver for training the covariate shift detector on the command line.
+UNDER CONSTRUCTION: Driver for training the covariate shift detector on the command line.
 
 Usage:
-  driver.py [options] DATASETS PREPROCESS
+  shift_detect [options] DATASETS PREPROCESS
 
 Arguments:
 
