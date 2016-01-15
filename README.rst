@@ -2,11 +2,10 @@
 Covariate shift estimator
 ===============================
 
-Learns a covariate shift estimator for a given dataset via Relative
-Unconstrained Least-Squares Importance Fitting (with leave-one-out cross
-validation)[1]
+Learns a covariate shift estimator for a given dataset via a kernel method using
+the Relative Unconstrained Least-Squares Importance Fitting algorithm [1].
 
-The RULSIF method estimates the relative ratio of probability densities
+The RULSIF kernel method estimates the relative ratio of probability densities
 
 P(X_reference) / (alpha * P(X_reference) + (1 - alpha) * P(X_test))
 
@@ -23,7 +22,7 @@ X_reference[i] | X_reference[i] in R^{d}, with i=1 to X_reference{N}
 drawn independently from P(X_reference)
 
 Using relative density ratios allows the RULSIF method to calculate a divergence
-score between a reference and test sample
+score between a reference and test sample.
 
 
 Usage
@@ -37,15 +36,15 @@ Usage
     >>> estimator = RULSIF()
 
     # Acquire training data
-    >>> X_reference_train = numpy.array([[-327.538995628852,1060.88410310621,-5135.11159167599], \
-                                         [-6079.76383170992,4540.07072474003, 4683.89186361784], \
-                                         [-519.48584881375 ,-65.427245639234,-460.108594708504], \
-                                        [-102.050993806512,-486.055204138377,-373.829956812207]])
+    >>> X_reference_train = numpy.array([[-327.538995,1060.88410,-5135.11159], \
+                                         [-6079.76383,4540.07072, 4683.89186], \
+                                         [-519.485848,-65.427245,-460.108594], \
+                                         [-102.050993,-486.05520,-373.829956]])
 
-    >>> X_test_train      = numpy.array([[4968.97172846034 ,3051.50683649008 ,-102.050993806512], \
-                                         [-5501.48250592865,-1951.72530129918,-44.1323008447163], \
-                                         [2872.91368914527 ,-555.026187729457, 1582.54918268909], \
-                                         [-715.46199368274 ,-544.196344693367, -61.437813172935]])
+    >>> X_test_train      = numpy.array([[4968.97172, 3051.50683,-102.050991], \
+                                         [-5501.4825,-1951.72530,-44.1323003], \
+                                         [2872.91368,-555.026187, 1582.54918], \
+                                         [-715.46199,-544.196344,-61.4378131]])
 
     # Train the model
     >>> estimator.train(X_reference_train, X_test_train)
