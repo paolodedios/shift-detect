@@ -26,20 +26,9 @@ Options:
   -m, --host M                database host name
   -p, --port P                database port
   -d, --database D            database name
+  -c, --collection C          run detector on named database collection
 
   -o, --test                  use fixed gaussian sample data against covariate shift detection algorithm
-  -j, --sudden                apply abrupt covariate shift detection algorithm on samples from test interval
-  -r, --gradual               apply gradual covariate shift detection algorithm on samples from test interval(s)
-
-  -c, --collection C          run detector on named collection
-
-  -w, --win1start W           ISO8601 start date-time for reference interval sample
-  -x, --win1end X             ISO8601 end date-time for reference interval sample
-  -y, --win2start Y           ISO8601 start date-time for test interval sample
-  -z, --win2end Z             ISO8601 end date-time for test interval sample
-  -n, --subseqlen N           window size used for interval subsequences when generating Hankel matrix
-  -e, --granularity E         for any datetime fields, only use values at the granularity specified by E
-  -u, --samplesize U          sample at most U observations from the population defined by each interval; no sampling if U=0
 
   -a, --alpha A               use A as the alpha relative parameter (ULSIF {a = 0}, RULSIF {a > 0} )
   -s, --sigma S               use G as the gaussian width parameter override, sigma
@@ -52,8 +41,7 @@ Options:
   -3, --scatterkernel         render scatter plot of reference and test samples of dataset1 in Hilbert space
 
   -4, --scatterratio          render scatter plot of reference and test samples of dataset1 vs density ratio
-  -5, --timeseries            render time series of entire sample of dataset1,...,datasetN against change point score
-  -6, --perfline              render line chart of compute performance for the specified datasets
+  -5, --perfline              render line chart of compute performance for the specified datasets
 
   --dataset1 1                run detector on named data set field name from the specified collection; treated as R^d=1
   --dataset2 2                run detector on named data set field name from the specified collection; treated as R^d=2
