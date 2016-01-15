@@ -6,7 +6,7 @@
 # of this source code package.
 #
 """
-Main entry point when running the "change_detect" package
+Main entry point when running the "shift_detect" package
 
 For more information, read:
   https://www.python.org/dev/peps/pep-0338/
@@ -15,7 +15,7 @@ For more information, read:
 
 If this package depends on functions and variables defined in __init__.py, then
 this package should be instead executed with:
-  $ python -m change_detect
+  $ python -m shift_detect
 """
 from __future__ import print_function
 from driver import Driver

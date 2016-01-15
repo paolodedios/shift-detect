@@ -33,7 +33,7 @@ Usage
 
     $ python
     >>> import numpy
-    >>> from change_detect import rulsif
+    >>> from shift_detect import rulsif
     >>> estimator = RULSIF()
 
     # Acquire training data
@@ -60,7 +60,7 @@ Installation
 
 ::
 
-    $ pip install change-detect
+    $ pip install shift-detect
 
 Development
 ===========

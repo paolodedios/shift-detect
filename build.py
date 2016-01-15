@@ -33,7 +33,7 @@ default_task = [ "clean_project", "analyze", "publish" ]
 
 # Declare top level project properties
 authors = [Author("Paolo de Dios", "paolodedios@gmail.com")]
-name    = "change-detect"
+name    = "shift-detect"
 url     = "http://paolodedios.com"
 summary = "Covariate shift detector."
 version = "0.1.0"
@@ -134,7 +134,7 @@ def set_properties(project) :
 
     # Force setup.py to generate and install a shell script for the entry point
     project.set_property("distutils_console_scripts", [
-        "change_detect = change_detect.__main__:main"
+        "shift_detect = shift_detect.__main__:main"
         ])
 
     # Extend the list of setup.py commands to be executed from sdist, bdist_dumb

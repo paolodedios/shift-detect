@@ -4,4 +4,4 @@ Reference
 .. toctree::
     :glob:
 
-    change_detect*
+    shift_detect*

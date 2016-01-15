@@ -78,7 +78,7 @@ from docopt                 import docopt
 import sys
 import signal
 import json
-import change_detect
+import shift_detect
 
 
 class Driver(object) :
@@ -117,7 +117,7 @@ class Driver(object) :
         try :
             self._install_signal_handlers()
 
-            options = docopt(__doc__, version=change_detect.__version__)
+            options = docopt(__doc__, version=shift_detect.__version__)
 
             self._front_matter(options)
 

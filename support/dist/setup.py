@@ -86,7 +86,7 @@ kwargs = {
     },
     "entry_points"         : {
         "console_scripts": [
-            "change_detect = change_detect.__main__:main"
+            "shift_detect = shift_detect.__main__:main"
         ]
     },
     "cmdclass"             : {

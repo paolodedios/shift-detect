@@ -2,6 +2,6 @@
 Usage
 =====
 
-To use Change Detector in a project::
+To use the Covariate Shift Detector in a project::
 
-	import change_detect
+	import shift_detect

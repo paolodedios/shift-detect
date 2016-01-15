@@ -6,7 +6,7 @@
 # of this source code package.
 #
 """
-Initialization code for the "change_detect" package
+Initialization code for the "shift_detect" package
 
 For more information, read: https://docs.python.org/2/tutorial/modules.html
 """
@@ -15,8 +15,8 @@ from __future__ import print_function
 import sys
 
 __python_version__ = (2, 7)
-__app_name__       = "Change Detector"
-__log_module__     = "change_detect"
+__app_name__       = "Covariate Shift Detector"
+__log_module__     = "shift_detect"
 __version__        = "0.1.0"
 
 if sys.version_info[:2] < __python_version__ :

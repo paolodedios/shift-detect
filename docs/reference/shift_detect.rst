@@ -1,5 +1,5 @@
-change_detect
+shift_detect
 =============================
 
-.. automodule:: change_detect
+.. automodule:: shift_detect
     :members:
