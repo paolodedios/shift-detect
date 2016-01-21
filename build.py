@@ -37,7 +37,7 @@ name    = "shift-detect"
 url     = "http://paolodedios.com"
 summary = "Covariate shift detector."
 version = "0.1.0"
-license = "ATCSL"
+license = "MPL"
 
 
 @init

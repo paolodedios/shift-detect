@@ -47,7 +47,7 @@ class RealClean(Command) :
 kwargs = {
     "name"                 : "change-detect",
     "version"              : "0.1.0",
-    "license"              : "ATCSL",
+    "license"              : "MPL",
     "description"          : "Covariate shift detector.",
     "long_description"     : "{0}\n".format(read("README.rst")),
     "author"               : "Paolo de Dios",
