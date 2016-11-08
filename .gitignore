@@ -58,4 +58,6 @@ coverage.xml
 docs/_build/
 
 # PyBuilder
+requirements-build.txt
+requirements.txt
 target/
