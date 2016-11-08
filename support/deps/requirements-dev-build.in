@@ -1,0 +1,18 @@
+######################################################################################
+#
+# Top-level packages required for dev builds
+#
+######################################################################################
+
+devpi-client
+pip-tools
+cookiecutter
+bumpversion
+mockito
+pytest
+coverage
+flake8
+sphinx
+tox
+wheel
+pybuilder
