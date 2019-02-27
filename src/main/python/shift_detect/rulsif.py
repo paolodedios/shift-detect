@@ -236,7 +236,7 @@ class RULSIF(Estimator) :
         numrows = sampleSet.shape[0]
         samples = sampleSet
 
-        G = sum((samples * samples), 1)
+        G = numpy.sum((samples * samples), axis=1)
         Q = numpy.tile(G[:, None], (1, numrows))
         R = numpy.tile(G, (numrows, 1))
 
