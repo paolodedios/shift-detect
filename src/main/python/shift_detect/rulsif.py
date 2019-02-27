@@ -348,7 +348,7 @@ class RULSIF(Estimator) :
                 H_h_KthFold    = AlphaRelativeDensityRatioEstimator.H_hat(self.alphaConstraint, K_ref_trainingSet, K_test_trainingSet)
                 h_h_KthFold    = AlphaRelativeDensityRatioEstimator.h_hat(K_ref_trainingSet)
 
-                for lambdaIdx in numpy.r_[0:numpy.size(numpy.lambdaCandidates)] :
+                for lambdaIdx in numpy.r_[0:numpy.size(lambdaCandidates)] :
 
                     lambdaCandidate = lambdaCandidates[lambdaIdx]
 
