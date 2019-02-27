@@ -27,9 +27,10 @@ use_plugin("copy_files")
 use_plugin("clean_project")
 use_plugin("distribute")
 use_plugin("devpi")
+use_plugin("exec")
 
 # Declare default build phase tasks to execute
-default_task = [ "clean_project", "analyze", "publish" ]
+default_task = [ "clean_project", "analyze", "install_dependencies", "publish" ]
 
 # Declare top level project properties
 authors = [Author("Paolo de Dios", "paolodedios@gmail.com")]
@@ -43,18 +44,17 @@ license = "MPL"
 @init
 def set_properties(project) :
 
+    # Generate build and runtime dependency specs
+    project.set_property("dir_deps_requirements", "support/deps")
+    project.set_property("analyze_command", "support/deps/pip-compile-deps.sh {}".format(project.get_property("dir_deps_requirements")))
+    project.set_property("analyze_propagate_stdout", True)
+    project.set_property("analyze_propagate_stderr", True)
+
     # Declare project build dependencies
-    project.build_depends_on("mockito", ">=0.5.2")
+    project.build_depends_on_requirements("{}/requirements-build.txt".format(project.get_property("dir_deps_requirements")))
 
     # Declare project runtime dependencies
-    project.depends_on("six", ">=1.9")
-    project.depends_on("docopt", ">=0.6.2")
-    project.depends_on("numpy", ">=1.10.4")
-    project.depends_on("scipy", ">=0.16.1")
-    project.depends_on("scikit-learn", ">=0.17.0")
-
-    # Always upgrade runtime dependencies given the pinned version specs below
-    project.set_property("install_dependencies_upgrade", True)
+    project.depends_on_requirements("{}/requirements.txt".format(project.get_property("dir_deps_requirements")))
 
     # Declare the location of all unit tests
     project.set_property("dir_source_unittest_python", "src/test/unit/python")
@@ -74,6 +74,8 @@ def set_properties(project) :
     # Specify unit and integration test artifacts that can be removed with the
     # "clean_project" task
     project.get_property("clean_project_files_glob").extend([
+        "{}/requirements-build.txt".format(project.get_property("dir_deps_requirements")),
+        "{}/requirements.txt".format(project.get_property("dir_deps_requirements")),
         "{}/__pycache__".format(project.get_property("dir_source_unittest_python")),
         "{}/*.pyc".format(project.get_property("dir_source_unittest_python")),
         "{}/__pycache__".format(project.get_property("dir_source_integrationtest_python")),
@@ -92,6 +94,7 @@ def set_properties(project) :
     project.get_property("copy_root_files_glob").extend([
         "LICENSE",
         "README.rst",
+        "support/deps/requirements.txt",
         "support/dist/setup.cfg",
         "support/dist/tox.ini"
         ])
@@ -100,6 +103,7 @@ def set_properties(project) :
     # MAINIFEST.in
     project.install_file(".", "LICENSE")
     project.install_file(".", "README.rst")
+    project.install_file(".", "requirements.txt")
     project.install_file(".", "tox.ini")
 
     # Package all scripts in the bin directory
@@ -127,6 +131,7 @@ def set_properties(project) :
         "Programming Language :: Python :: 3",
         "Programming Language :: Python :: 3.3",
         "Programming Language :: Python :: 3.4",
+        "Programming Language :: Python :: 3.5",
         "Programming Language :: Python :: Implementation :: CPython",
         "Programming Language :: Python :: Implementation :: PyPy",
         "Topic :: Utilities"
@@ -142,7 +147,7 @@ def set_properties(project) :
 
     # Set user name and destination index for local devpi/PyPi central
     # repository
-    project.set_property("devpi_user", "appliedtheory")
+    project.set_property("devpi_user", "root")
     project.set_property("devpi_developer_index", "dev")
     project.set_property("devpi_staging_index"  , "staging")
     project.set_property("devpi_release_index"  , "release")
